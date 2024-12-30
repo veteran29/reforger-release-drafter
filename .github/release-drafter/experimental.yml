@@ -1,13 +1,12 @@
 prerelease: true
-prerelease-identifier: 'exp'
+include-pre-releases: true
 
-name-template: 'v$RESOLVED_VERSION'
-tag-template: 'v$RESOLVED_VERSION'
+name-template: 'v$RESOLVED_VERSION-experimental'
+tag-template: 'v$RESOLVED_VERSION-experimentl'
 categories:
   - title: 'Features'
     labels:
       - 'enhancement'
-      - 'feature'
   - title: 'Bug Fixes'
     labels:
       - 'bug'
