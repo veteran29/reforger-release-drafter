@@ -4,6 +4,7 @@ include-pre-releases: true
 name-template: 'v$RESOLVED_VERSION-experimental'
 tag-template: 'exp-v$RESOLVED_VERSION'
 tag-prefix: 'exp-'
+commitish: master
 categories:
   - title: 'Features'
     labels:

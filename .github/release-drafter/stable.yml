@@ -3,6 +3,7 @@ include-pre-releases: false
 
 name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
+commitish: stable
 categories:
   - title: 'Features'
     labels:
