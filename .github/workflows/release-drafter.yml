@@ -23,6 +23,7 @@ jobs:
     steps:
       # Drafts your next Release notes as Pull Requests are merged into "master"
       - uses: release-drafter/release-drafter@v6
+        name: Release drafter
         if: ${{ github.base_ref != 'stable' }}
         with:
           config-name: release-drafter/experimental.yml
@@ -30,6 +31,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: release-drafter/release-drafter@v6
+        name: Release drafter stable
         if: ${{ github.base_ref == 'stable' }}
         with:
           config-name: release-drafter/stable.yml
