@@ -1,9 +1,8 @@
-prerelease: true
-include-pre-releases: true
+prerelease: false
+include-pre-releases: false
 
-name-template: 'v$RESOLVED_VERSION-experimental'
-tag-template: 'exp-v$RESOLVED_VERSION'
-tag-prefix: 'exp-'
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
 categories:
   - title: 'Features'
     labels:
@@ -32,20 +31,9 @@ version-resolver:
   default: patch
 
 autolabeler:
-  - label: 'enhancement'
+  - label: 'ignore changelog'
     title:
-      - '/^feat/i'
-  - label: 'bug'
-    title:
-      - '/^fix/i'
-  - label: 'other'
-    title:
-      - '/^ci/i'
       - '/^chore/i'
-      - '/^refactor/i'
-  - label: 'documentation'
-    title:
-      - '/^docs/i'
 
 template: |
   ## Changes
