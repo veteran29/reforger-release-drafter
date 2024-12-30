@@ -5,6 +5,7 @@ on:
     # branches to consider in the event; optional, defaults to all
     branches:
       - master
+      - stable
   pull_request_target:
     types: [opened, reopened, synchronize]
 
@@ -22,7 +23,15 @@ jobs:
     steps:
       # Drafts your next Release notes as Pull Requests are merged into "master"
       - uses: release-drafter/release-drafter@v6
+        if: ${{ github.base_ref != 'stable' }}
         with:
           config-name: release-drafter/experimental.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: release-drafter/release-drafter@v6
+        if: ${{ github.base_ref == 'stable' }}
+        with:
+          config-name: release-drafter/stable.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,42 @@
+prerelease: false
+include-pre-releases: false
+
+name-template: 'v$RESOLVED_VERSION-experimental'
+tag-template: 'v$RESOLVED_VERSION'
+tag-prefix: 'exp-'
+categories:
+  - title: 'Features'
+    labels:
+      - 'enhancement'
+  - title: 'Bug Fixes'
+    labels:
+      - 'bug'
+  - title: 'Other'
+    labels:
+      - 'documentation'
+      - 'other'
+
+exclude-labels:
+  - 'skip-changelog'
+
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
+
+version-resolver:
+  minor:
+    labels:
+      - 'enhancement'
+  patch:
+    labels:
+      - 'bug'
+  default: patch
+
+autolabeler:
+  - label: 'skip-changelog'
+    title:
+      - '/^chore/i'
+
+template: |
+  ## Changes
+
+  $CHANGES
