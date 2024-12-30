@@ -2,7 +2,8 @@ prerelease: true
 include-pre-releases: true
 
 name-template: 'v$RESOLVED_VERSION-experimental'
-tag-template: 'v$RESOLVED_VERSION-experimentl'
+tag-template: 'exp-v$RESOLVED_VERSION'
+tag-prefix: 'exp-'
 categories:
   - title: 'Features'
     labels:
