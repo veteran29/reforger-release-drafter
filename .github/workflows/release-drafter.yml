@@ -24,7 +24,7 @@ jobs:
       # Drafts your next Release notes as Pull Requests are merged into "master"
       - uses: release-drafter/release-drafter@v6
         name: Release drafter
-        if: ${{ github.base_ref != 'stable' }}
+        if: (${{ github.event_name == 'pull_request_target'}} && ${{ github.base_ref != 'stable' }}) || ${{ github.ref == 'refs/heads/master' }}
         with:
           config-name: release-drafter/experimental.yml
         env:
@@ -32,7 +32,7 @@ jobs:
 
       - uses: release-drafter/release-drafter@v6
         name: Release drafter stable
-        if: ${{ github.base_ref == 'stable' }}
+        if: (${{ github.event_name == 'pull_request_target'}} && ${{ github.base_ref == 'stable' }}) || ${{ github.ref == 'refs/heads/stable' }}
         with:
           config-name: release-drafter/stable.yml
         env:
