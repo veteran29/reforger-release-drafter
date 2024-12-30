@@ -1,5 +1,5 @@
 prerelease: true
-prerelease-identifier: 'experimental'
+prerelease-identifier: 'exp'
 
 name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
@@ -30,6 +30,22 @@ version-resolver:
     labels:
       - 'bug'
   default: patch
+
+autolabeler:
+  - label: 'enhancement'
+    title:
+      - '/^feat/i'
+  - label: 'bug'
+    title:
+      - '/^fix/i'
+  - label: 'other'
+    title:
+      - '/^ci/i'
+      - '/^chore/i'
+      - '/^refactor/i'
+  - label: 'documentation'
+    title:
+      - '/^docs/i'
 
 template: |
   ## Changes
