@@ -17,7 +17,7 @@ categories:
       - 'other'
 
 exclude-labels:
-  - 'skip-changelog'
+  - 'ignore changelog'
 
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
@@ -32,7 +32,7 @@ version-resolver:
   default: patch
 
 autolabeler:
-  - label: 'skip-changelog'
+  - label: 'ignore changelog'
     title:
       - '/^chore/i'
 
